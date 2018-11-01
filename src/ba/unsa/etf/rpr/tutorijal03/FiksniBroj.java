@@ -24,10 +24,12 @@ public class FiksniBroj extends TelefonskiBroj {
     private String broj;
 
     FiksniBroj(Grad grad, String broj) {
+        this.grad = grad;
+        this.broj = broj;
     }
 
     public String ispisi() {
-        return "";
+        return grad.getPozivni() + "/" + broj;
     }
     public int hashCode() {
         return 2;
