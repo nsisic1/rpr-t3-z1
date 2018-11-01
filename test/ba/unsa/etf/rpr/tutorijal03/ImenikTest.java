@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr.tutorijal03;
+/*package ba.unsa.etf.rpr.tutorijal03;
 
 import org.junit.jupiter.api.Test;
 
@@ -60,4 +60,4 @@ class ImenikTest {
         }
         assertEquals("033/123-156,033/123-456,033/123-656,", result);
     }
-}
+}*/
