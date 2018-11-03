@@ -32,6 +32,10 @@ public class FiksniBroj extends TelefonskiBroj {
         this.broj = broj;
     }
 
+    Grad getGrad() {
+        return grad;
+    }
+
     public String ispisi() {
         return grad.getPozivni() + "/" + broj;
     }

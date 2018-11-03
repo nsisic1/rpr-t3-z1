@@ -6,27 +6,11 @@ public class MobilniBroj extends TelefonskiBroj {
     private String broj;
 
     MobilniBroj(int mobilnaMreza, String broj) {
-        boolean excep = false;
-        String excepMsg = "";
-        if (mobilnaMreza < 60 || mobilnaMreza > 67) {
-            excep = true;
-            excepMsg += "Broj mobline mreze nije validan";
-        }
-        if (true) { // !broj.jeLiMobilniBroj() - regex?
-            if (excep) // Nije valjao broj mreze
-                excepMsg += "i ostatak broja nije validan";
-            else {
-                excepMsg += "ostatak broja nije validan";
-            }
-            excep = true;
-        }
+        if (mobilnaMreza < 60 || mobilnaMreza > 67)
+            throw new IllegalArgumentException("Broj mobilne mreze nije validan");
 
-        if (excep)
-            throw new IllegalArgumentException(excepMsg);
-        else {
-            this.mobilnaMreza = mobilnaMreza;
-            this.broj = broj;
-        }
+        this.mobilnaMreza = mobilnaMreza;
+        this.broj = broj;
     }
 
     public String ispisi() {

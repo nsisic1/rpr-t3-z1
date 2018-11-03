@@ -14,7 +14,7 @@ abstract class TelefonskiBroj implements Comparable<TelefonskiBroj> {
         return ispisi().compareTo(other.ispisi());
     }
 
-    public boolean equals(TelefonskiBroj other) {
+    boolean equals(TelefonskiBroj other) {
         if (other.getClass() != this.getClass())
             return false;
         else
