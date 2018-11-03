@@ -18,6 +18,8 @@ class ImenikTest {
         assertEquals("033/123-456", imenik.dajBroj("Meho Mehic"));
     }
 
+
+
     @Test
     void naSlovo() {
         Imenik imenik = new Imenik();
@@ -26,10 +28,21 @@ class ImenikTest {
         imenik.dodaj("Ivo Ivic", new MobilniBroj(61, "321-645"));
         imenik.dodaj("Jozo Jozic", new MobilniBroj(64, "987-654"));
         imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
-        assertEquals( "1. Ivo Ivic - 061/321-645", imenik.naSlovo('I').trim());
+        assertEquals("1. Ivo Ivic - 061/321-645", imenik.naSlovo('I').trim());
     }
 
-    }/*@Test
+    @Test
+    void naSlovo2() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));
+        imenik.dodaj("Pero Peric", new FiksniBroj(SARAJEVO, "123-656"));
+        imenik.dodaj("Ivo Ivic", new MobilniBroj(61, "321-645"));
+        imenik.dodaj("Jozo Jozic", new MobilniBroj(64, "987-654"));
+        imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
+        assertEquals("1. John Smith - +123 45-67-89" + "\n2. Jozo Jozic - 064/987-654", imenik.naSlovo('J').trim());
+    }
+
+    @Test
     void izGrada() {
         Imenik imenik = new Imenik();
         imenik.dodaj("Ivo Ivic", new FiksniBroj(SARAJEVO, "123-456"));
@@ -39,7 +52,7 @@ class ImenikTest {
         imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
         Set<String> set = imenik.izGrada(SARAJEVO);
         String result = "";
-        for (String ime: set) {
+        for (String ime : set) {
             result += ime + ",";
         }
         assertEquals("Ivo Ivic,Meho Mehic,Sara Sarac,", result);
@@ -60,4 +73,4 @@ class ImenikTest {
         }
         assertEquals("033/123-156,033/123-456,033/123-656,", result);
     }
-}*/
+}
