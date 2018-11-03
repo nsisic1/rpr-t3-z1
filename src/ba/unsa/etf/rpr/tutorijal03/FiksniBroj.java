@@ -33,9 +33,7 @@ public class FiksniBroj extends TelefonskiBroj {
     public String ispisi() {
         return grad.getPozivni() + "/" + broj;
     }
-    public int hashCode() {
-        return 2;
-    };
+    // public int hashCode() { return 2; };
 }
 
 

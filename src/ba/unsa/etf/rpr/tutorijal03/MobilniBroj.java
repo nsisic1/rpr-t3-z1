@@ -32,7 +32,5 @@ public class MobilniBroj extends TelefonskiBroj {
     public String ispisi() {
         return "0" + mobilnaMreza + "/" + broj;
     }
-    public int hashCode() {
-        return 2;
-    };
+    // public int hashCode() { return 2; };
 }

@@ -13,7 +13,5 @@ public class MedunarodniBroj extends TelefonskiBroj {
     public String ispisi() {
         return drzava + broj;
     }
-    public int hashCode() {
-        return 2;
-    };
+    // public int hashCode() { return 2; };
 }

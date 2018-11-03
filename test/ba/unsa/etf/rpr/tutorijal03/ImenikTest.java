@@ -1,4 +1,4 @@
-/*package ba.unsa.etf.rpr.tutorijal03;
+/**/package ba.unsa.etf.rpr.tutorijal03;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +18,7 @@ class ImenikTest {
         assertEquals("033/123-456", imenik.dajBroj("Meho Mehic"));
     }
 
-    @Test
+    }/*@Test
     void naSlovo() {
         Imenik imenik = new Imenik();
         imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));
