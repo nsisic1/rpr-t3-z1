@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-abstract class TelefonskiBroj {
+abstract class TelefonskiBroj implements Comparable<TelefonskiBroj> {
 
     public abstract String ispisi();
 
@@ -8,6 +8,18 @@ abstract class TelefonskiBroj {
     @Override
     public abstract int hashCode();
     */
+
+    @Override
+    public int compareTo(TelefonskiBroj other) {
+        return ispisi().compareTo(other.ispisi());
+    }
+
+    public boolean equals(TelefonskiBroj other) {
+        if (other.getClass() != this.getClass())
+            return false;
+        else
+            return ispisi().equals(other.ispisi());
+    }
 }
 
 
