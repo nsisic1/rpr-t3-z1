@@ -14,9 +14,11 @@ public class FiksniBroj extends TelefonskiBroj {
 
 
         final String pozivni; // pozivni broj za datu regiju
+
         private Grad(String pozivni) {
-            this.pozivni = "";
+            this.pozivni = pozivni;
         }
+
         public String getPozivni() {
             return pozivni;
         }
