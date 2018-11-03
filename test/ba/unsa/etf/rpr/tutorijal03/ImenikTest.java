@@ -18,7 +18,20 @@ class ImenikTest {
         assertEquals("033/123-456", imenik.dajBroj("Meho Mehic"));
     }
 
+    @Test
+    void dajBroj() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("Spartak Zoloev", new MobilniBroj(62, "123-456"));
+        assertEquals("062/123-456", imenik.dajBroj("Spartak Zoloev"));
+    }
 
+    @Test
+    void dajIme() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("Spartak Zoloev", new MobilniBroj(62, "123-456"));
+        imenik.dodaj("Kemal Monteno", new MobilniBroj(61, "123-456"));
+        assertEquals("Spartak Zoloev", imenik.dajIme(new MobilniBroj(62, "123-456")));
+    }
 
     @Test
     void naSlovo() {
