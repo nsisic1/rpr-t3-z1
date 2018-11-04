@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.*;
 
@@ -84,7 +86,12 @@ public class Program {
                 grad = ulaz.nextLine();
                 System.out.println("Unesite telefonski broj: ");
                 broj = ulaz.nextLine();
-                noviBroj = new FiksniBroj(FiksniBroj.Grad.valueOf(grad.toUpperCase()), broj);
+                try {
+                    noviBroj = new FiksniBroj(FiksniBroj.Grad.valueOf(grad.toUpperCase()), broj);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Grad ne postoji");
+                    return;
+                }
                 imenik.dodaj(nazivOsobe, noviBroj);
                 break;
             // Mobilni broj
@@ -95,7 +102,12 @@ public class Program {
                 ulaz.nextLine();
                 System.out.println("Unesite broj: ");
                 broj = ulaz.nextLine();
-                noviBroj = new MobilniBroj(mreza, broj);
+                try {
+                    noviBroj = new MobilniBroj(mreza, broj);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Mrezni broj nije validan");
+                    return;
+                }
                 imenik.dodaj(nazivOsobe, noviBroj);
                 break;
             // Medjunarodni broj
@@ -109,6 +121,7 @@ public class Program {
                 imenik.dodaj(nazivOsobe, noviBroj);
                 break;
         }
+        System.out.println("Unesen novi broj!");
     }
 
     private static void akcija2() {
@@ -160,7 +173,11 @@ public class Program {
         System.out.println("Unesite ime grada: ");
         grad = ulaz.nextLine();
         try {
-            System.out.println(imenik.izGrada(FiksniBroj.Grad.valueOf(grad.toUpperCase())));
+            Set<String> skupImena = new TreeSet<>();
+            skupImena = imenik.izGrada(FiksniBroj.Grad.valueOf(grad.toUpperCase()));
+            for (String ime : skupImena) {
+                System.out.println(ime);
+            }
         } catch (IllegalArgumentException e) {
             System.out.println("Uneseni grad ne postoji.");
         }
@@ -171,7 +188,11 @@ public class Program {
         System.out.println("Unesite ime grada: ");
         grad = ulaz.nextLine();
         try {
-            System.out.println(imenik.izGradaBrojevi(FiksniBroj.Grad.valueOf(grad.toUpperCase())));
+            Set<TelefonskiBroj> skupBrojeva = new TreeSet<>();
+            skupBrojeva = imenik.izGradaBrojevi(FiksniBroj.Grad.valueOf(grad.toUpperCase()));
+            for (TelefonskiBroj broj : skupBrojeva) {
+                System.out.println(broj.ispisi());
+            }
         } catch (IllegalArgumentException e) {
             System.out.println("Uneseni grad ne postoji.");
         }
