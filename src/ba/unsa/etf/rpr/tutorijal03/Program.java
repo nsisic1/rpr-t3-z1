@@ -27,7 +27,7 @@ public class Program {
                     akcija2();
                     break;
                 case 3 :
-                    //
+                    akcija3();
                     break;
                 case 4 :
                     akcija4();
@@ -39,9 +39,10 @@ public class Program {
                     akcija6();
                     break;
                 case 7 :
-                    printMeni();
+                    // Prikaze meni tako sto preskaci na sljedecu iteraciju u kojoj se printMeni() poziva
                     break;
                 case 8 :
+                    // Izlaz iz programa
                     return;
             }
 
@@ -137,24 +138,64 @@ public class Program {
         }
     }
 
-    /*private static void akcija3() {
+    private static void akcija3() {
         int izborVrsteBroja;
-        System.out.println("Koji zelite dodati?" +
-                "1 - Fiksni broj" +
-                "2 - Mobilni broj" +
-                "3 - Medjunarodni broj");
+        System.out.println("O kojem broju je rijec?\n" +
+                "1 - Fiksni broj\n" +
+                "2 - Mobilni broj\n" +
+                "3 - Medjunarodni broj\n");
         izborVrsteBroja = ulaz.nextInt();
-        String nazivOsobe;
-        System.out.println("Unesite naziv osobe: ");
-        nazivOsobe = ulaz.nextLine();
         String broj;
-        try {
-            broj = imenik.dajBroj(nazivOsobe);
-            System.out.println(nazivOsobe + " - " + broj);
-        } catch (NullPointerException e) {
-            System.out.println("Osoba ne postoji");
+        TelefonskiBroj brojZaPoraziti = null;
+        switch (izborVrsteBroja) {
+            // Fiksni broj
+            case 1:
+                String grad;
+                System.out.println("Unesite grad: ");
+                grad = ulaz.nextLine();
+                System.out.println("Unesite telefonski broj: ");
+                broj = ulaz.nextLine();
+                try {
+                    brojZaPoraziti = new FiksniBroj(FiksniBroj.Grad.valueOf(grad.toUpperCase()), broj);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Grad ne postoji");
+                    return;
+                }
+                break;
+            // Mobilni broj
+            case 2:
+                int mreza;
+                System.out.println("Unesite mobilnu mrezu: ");
+                mreza = ulaz.nextInt();
+                ulaz.nextLine();
+                System.out.println("Unesite broj: ");
+                broj = ulaz.nextLine();
+                try {
+                    brojZaPoraziti = new MobilniBroj(mreza, broj);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Mrezni broj nije validan");
+                    return;
+                }
+                break;
+            // Medjunarodni broj
+            case 3:
+                String pozivniDrzave;
+                System.out.println("Unesite pozivni drzave: ");
+                pozivniDrzave = ulaz.nextLine();
+                System.out.println("Unesite broj: ");
+                broj = ulaz.nextLine();
+                brojZaPoraziti = new MedunarodniBroj(pozivniDrzave, broj);
+                break;
         }
-    }*/
+
+        if (brojZaPoraziti != null) {
+            String rezultatPretrage = imenik.dajIme(brojZaPoraziti);
+            if (rezultatPretrage == null || rezultatPretrage.isEmpty())
+                System.out.println("Nema osobe ciji je to broj.");
+            else
+                System.out.println(rezultatPretrage);
+        }
+    }
 
     private static void akcija4() {
         char slovo;
