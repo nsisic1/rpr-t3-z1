@@ -1,10 +1,9 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.*;
-
 public class Main {
-	public static void main(String[] args) {
-		/*System.out.println("Cilj vježbe je napraviti aplikaciju \"ETF Telefonski imenik\". Aplikacija se treba sastojati od sljedećih klasa:\n" +
+
+    public static void main(String[] args) {
+	    System.out.println("Cilj vježbe je napraviti aplikaciju \"ETF Telefonski imenik\". Aplikacija se treba sastojati od sljedećih klasa:\n" +
 				"Apstraktna klasa TelefonskiBroj sadrži javnu apstraktnu metodu String ispisi() koja vraća broj u tekstualnoj formi pogodnoj za ispis, te apstraktnu metodu int hashCode() objašnjenu na predavanjima. Iz ove klase izvedene su sljedeće klase:\n" +
 				"FiksniBroj sadrži konstruktor FiksniBroj(Grad grad, String broj). Parametar broj je dio telefonskog broja bez pozivnog broja npr. \"123-456\", a grad je promjenljiva pobrojanog tipa koji označava pozivni broj koji treba koristiti npr.:\n" +
 				"\tenum Grad { SARAJEVO, TUZLA, ZENICA…}\n" +
@@ -25,26 +24,6 @@ public class Main {
 				"Dodajte nedostajuće testove po potrebi. Prilikom rješavanja zadatka obavezno se pridržavati pravila rada koja su navedena na predavanjima, između ostalog:\n" +
 				"ispravno imenovanje paketa, klasa, metoda i promjenljivih,\n" +
 				"primjenu komentara,\n" +
-				"atomic commits.\n");*/
-
-		System.out.println("Dobrodosli u ETF Telefonski imenik. Unesite cifru da pokrenete akciju:\n" +
-			"1 : Dodaj novi broj\n" +
-			"2 : Prikazi broj korisnika\n" +
-			"3 : Nadji korisnika koji sa unesenim brojem\n" +
-			"4 : Prikazi sve brojeve u telefonskom imeniku za osobe čije ime počinje na uneseno slovo\n" +
-			"5 : Prikazi imena osoba koji zive u unesenom gradu:\n" +
-			"6 : Prikazi imena i brojeve osoba ");
-	}
+				"atomic commits.\n");
+    }
 }
-
-
-/*
-
-    public static void main(String[] args) {
-    	Imenik imenik = new Imenik();
-    	imenik.dodaj("Sedad Puz", new FiksniBroj(ZENICA, "123-456"));
-		imenik.dodaj("Sedad", new FiksniBroj(ZENICA, "123-456"));
-		imenik.dodaj("Sedad", new FiksniBroj(LIVNO, "123-456"));
-    	System.out.println(imenik.dajBroj("Sedad"));
-	}
- */

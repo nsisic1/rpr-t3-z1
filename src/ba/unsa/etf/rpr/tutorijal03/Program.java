@@ -145,6 +145,7 @@ public class Program {
                 "2 - Mobilni broj\n" +
                 "3 - Medjunarodni broj\n");
         izborVrsteBroja = ulaz.nextInt();
+        ulaz.nextLine();
         String broj;
         TelefonskiBroj brojZaPoraziti = null;
         switch (izborVrsteBroja) {
