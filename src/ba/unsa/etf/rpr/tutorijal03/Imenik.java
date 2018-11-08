@@ -32,7 +32,7 @@ class Imenik {
         int i = 1;
         for (HashMap.Entry<String, TelefonskiBroj> e : imenik.entrySet()) {
             if (e.getKey().charAt(0) == s) {
-                lista = lista.concat(String.valueOf(i) + ". " + e.getKey() + " - " + e.getValue().ispisi() + "\n");
+                lista = lista.concat(i + ". " + e.getKey() + " - " + e.getValue().ispisi() + "\n");
                 i++;
             }
         }

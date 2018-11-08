@@ -12,6 +12,8 @@ public class Program {
 
     private static Scanner ulaz = new Scanner(System.in);
 
+    private static final String unosBroja = "Unesite broj: ";
+
     public static void main(String[] args) {
         System.out.println("Dobrodosli u ETF Telefonski imenik.\n");
         int izbor;
@@ -101,7 +103,7 @@ public class Program {
                 System.out.println("Unesite mobilnu mrezu: ");
                 mreza = ulaz.nextInt();
                 ulaz.nextLine();
-                System.out.println("Unesite broj: ");
+                System.out.println(unosBroja);
                 broj = ulaz.nextLine();
                 try {
                     noviBroj = new MobilniBroj(mreza, broj);
@@ -116,7 +118,7 @@ public class Program {
                 String pozivniDrzave;
                 System.out.println("Unesite pozivni drzave: ");
                 pozivniDrzave = ulaz.nextLine();
-                System.out.println("Unesite broj: ");
+                System.out.println(unosBroja);
                 broj = ulaz.nextLine();
                 noviBroj = new MedunarodniBroj(pozivniDrzave, broj);
                 imenik.dodaj(nazivOsobe, noviBroj);
@@ -169,7 +171,7 @@ public class Program {
                 System.out.println("Unesite mobilnu mrezu: ");
                 mreza = ulaz.nextInt();
                 ulaz.nextLine();
-                System.out.println("Unesite broj: ");
+                System.out.println(unosBroja);
                 broj = ulaz.nextLine();
                 try {
                     brojZaPoraziti = new MobilniBroj(mreza, broj);
@@ -183,7 +185,7 @@ public class Program {
                 String pozivniDrzave;
                 System.out.println("Unesite pozivni drzave: ");
                 pozivniDrzave = ulaz.nextLine();
-                System.out.println("Unesite broj: ");
+                System.out.println(unosBroja);
                 broj = ulaz.nextLine();
                 brojZaPoraziti = new MedunarodniBroj(pozivniDrzave, broj);
                 break;

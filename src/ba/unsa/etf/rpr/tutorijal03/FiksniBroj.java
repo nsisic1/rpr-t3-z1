@@ -13,7 +13,7 @@ public class FiksniBroj extends TelefonskiBroj {
         PALE("057"), FOCA("058"), TREBINJE("059");
 
 
-        final String pozivni; // pozivni broj za datu regiju
+        private final String pozivni; // pozivni broj za datu regiju
 
         private Grad(String pozivni) {
             this.pozivni = pozivni;
