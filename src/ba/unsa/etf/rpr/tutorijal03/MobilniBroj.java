@@ -6,8 +6,9 @@ public class MobilniBroj extends TelefonskiBroj {
     private String broj;
 
     MobilniBroj(int mobilnaMreza, String broj) {
-        if (mobilnaMreza < 60 || mobilnaMreza > 67)
+        if (mobilnaMreza < 60 || mobilnaMreza > 67) {
             throw new IllegalArgumentException("Broj mobilne mreze nije validan");
+        }
 
         this.mobilnaMreza = mobilnaMreza;
         this.broj = broj;
